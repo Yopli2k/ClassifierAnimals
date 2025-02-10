@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clasificador de Animales</title>
+
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- TensorFlow & Teachable Machine -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@latest/dist/teachablemachine-image.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+    <h1><i class="fa-solid fa-paw"></i> Clasificador de Animales <i class="fa-solid fa-fish"></i></h1>
+    <p>Sube una imagen o selecciona una imagen de prueba.</p>
+
+    <!-- Botón para subir imagen -->
+    <label class="label-file" for="imageInput">
+        <i class="fa-solid fa-upload"></i> Subir Imagen
+    </label>
+    <input type="file" accept="image/*" id="imageInput">
+
+    <hr class="spacer">
+
+    <!-- Galería de imágenes de prueba -->
+    <h2>Selecciona una imagen de prueba:</h2>
+    <div class="gallery">
+        <img src="assets/images/test1.png" class="test-image" onclick="selectTestImage('assets/images/test1.png')" alt="test image">
+        <img src="assets/images/test2.png" class="test-image" onclick="selectTestImage('assets/images/test2.png')" alt="test image">
+        <img src="assets/images/test3.png" class="test-image" onclick="selectTestImage('assets/images/test3.png')" alt="test image">
+        <img src="assets/images/test4.png" class="test-image" onclick="selectTestImage('assets/images/test4.png')" alt="test image">
+        <img src="assets/images/test5.png" class="test-image" onclick="selectTestImage('assets/images/test5.png')" alt="test image">
+        <img src="assets/images/test6.png" class="test-image" onclick="selectTestImage('assets/images/test6.png')" alt="test image">
+        <img src="assets/images/test7.png" class="test-image" onclick="selectTestImage('assets/images/test7.png')" alt="test image">
+        <img src="assets/images/test8.png" class="test-image" onclick="selectTestImage('assets/images/test8.png')" alt="test image">
+        <img src="assets/images/test9.png" class="test-image" onclick="selectTestImage('assets/images/test9.png')" alt="test image">
+    </div>
+
+    <!-- Contenedor de imagen seleccionada -->
+    <div class="preview-container">
+        <img id="preview" />
+    </div>
+
+    <hr>
+
+    <!-- Resultado de la predicción -->
+    <div id="label-container"><i class="fa-solid fa-spinner fa-spin"></i> Esperando imagen...</div>
+</div>
+
+<script src="assets/js/script.js"></script>
+</body>
+</html>
